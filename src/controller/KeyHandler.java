@@ -4,10 +4,10 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class KeyHandler implements KeyListener {
-    boolean up, down, left, right, dodge, sprint;
-    private boolean[] keyPressed;
+    public boolean up, down, left, right, dodge, sprint;
+    private boolean[] pressed;
     public KeyHandler() {
-        keyPressed = new boolean[256];
+        pressed = new boolean[256];
     }
     @Override
     public void keyTyped(KeyEvent e) {
@@ -17,24 +17,26 @@ public class KeyHandler implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         int keyCode = e.getKeyCode();
-        if(keyCode >=0 && keyCode < keyPressed.length) {
-            keyPressed[keyCode] = true;
+        if(keyCode >=0 && keyCode < pressed.length) {
+            pressed[keyCode] = true;
+            updateMovement();
         }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
         int keyCode = e.getKeyCode();
-        if(keyCode >=0 && keyCode < keyPressed.length) {
-            keyPressed[keyCode] = false;
+        if(keyCode >=0 && keyCode < pressed.length) {
+            pressed[keyCode] = false;
+            updateMovement();
         }
     }
     private void updateMovement() {
-        up = keyPressed[KeyEvent.VK_W];
-        down = keyPressed[KeyEvent.VK_S];
-        left = keyPressed[KeyEvent.VK_A];
-        right = keyPressed[KeyEvent.VK_D];
-        dodge = keyPressed[KeyEvent.VK_SPACE];
-        sprint = keyPressed[KeyEvent.VK_SHIFT];
+        up = pressed[KeyEvent.VK_W];
+        down = pressed[KeyEvent.VK_S];
+        left = pressed[KeyEvent.VK_A];
+        right = pressed[KeyEvent.VK_D];
+        dodge = pressed[KeyEvent.VK_SPACE];
+        sprint = pressed[KeyEvent.VK_SHIFT];
     }
 }

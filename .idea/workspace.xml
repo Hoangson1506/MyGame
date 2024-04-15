@@ -5,15 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ce6e3c5-fcf3-4ad1-a931-2a00ad979d51" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyGame.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GameLauncher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GameLoop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GamePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/github_fracpete_princeton_java_stdlib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/MouseInput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/math/Position.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/math/Size.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/object/MeleeEnemy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/object/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/object/RangeEnemy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/object/TankEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyGame.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MyGame.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameLauncher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameLoop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/KeyHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +30,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -30,9 +38,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2f76hkbQURooyvtFpB8rdSW8Exk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -42,8 +50,14 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.GameLauncher.executor": "Run",
+    "Downloaded.Files.Path": "D:\\oop",
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -51,9 +65,24 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="object" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -62,7 +91,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1713139891981</updated>
-      <workItem from="1713139893130" duration="1113000" />
+      <workItem from="1713139893130" duration="6374000" />
+      <workItem from="1713174745145" duration="350000" />
+      <workItem from="1713175111711" duration="812000" />
+      <workItem from="1713175936232" duration="210000" />
+      <workItem from="1713176159495" duration="7956000" />
     </task>
     <servers />
   </component>

@@ -1,29 +1,32 @@
 public class GameLoop implements Runnable{
-    GamePanel gamePanel;
-    Thread thread;
-    public GameLoop(GamePanel gamePanel) {
-        this.gamePanel = gamePanel;
+    Game game;
+    boolean running;
+    public GameLoop(Game game) {
+        this.game = game;
     }
     @Override
     public void run() {
+        running = true;
         double FPS = 120;
         double drawInterval = 1000000000/FPS;
-        long lastTime = System.nanoTime(), currentTime;
+        long lastTime = System.nanoTime();
         double delta = 0;
-        while(thread != null) {
+        long currentTime;
+        while(running) {
             currentTime = System.nanoTime();
-            delta = (currentTime - lastTime)/drawInterval;
-            if(delta >= 1) {
+            delta += (currentTime - lastTime)/ drawInterval;
+            lastTime = System.nanoTime();
+            if (delta >= 1) {
                 update();
+                render();
                 delta--;
             }
-            render();
         }
     }
     public void update() {
-        gamePanel.update();
+        game.update();
     }
     public void render() {
-        gamePanel.render();
+        game.render();
     }
 }
