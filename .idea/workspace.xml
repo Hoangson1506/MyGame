@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ce6e3c5-fcf3-4ad1-a931-2a00ad979d51" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Renderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/math/Vector2D.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mechanic/Movement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/animation/ImageLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/animation/SpriteLibrary.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/math/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/math/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +85,7 @@
       <workItem from="1713176159495" duration="8160000" />
       <workItem from="1713233295352" duration="371000" />
       <workItem from="1713234238413" duration="597000" />
-      <workItem from="1713264539396" duration="1822000" />
+      <workItem from="1713264539396" duration="4084000" />
     </task>
     <servers />
   </component>
