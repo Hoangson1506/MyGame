@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Game {
-    GameWindow gameWindow;
+    private GameWindow gameWindow;
     private List<GameObject> gameObjects;
     KeyHandler keyHandler;
     public Game(int width, int height) {

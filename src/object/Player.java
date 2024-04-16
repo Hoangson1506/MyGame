@@ -2,32 +2,25 @@ package object;
 
 import controller.KeyHandler;
 import math.Position;
+import mechanic.Movement;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class Player extends GameObject{
-    KeyHandler keyHandler;
+    private KeyHandler keyHandler;
+    private Movement movement;
+    private double speed;
     public Player(KeyHandler keyHandler) {
         super();
+        speed = 2;
         this.keyHandler = keyHandler;
+        this.movement = new Movement(speed);
     }
     @Override
     public void update() {
-        int dX = 0, dY = 0;
-        if(keyHandler.up) {
-            dY--;
-        }
-        if(keyHandler.down) {
-            dY++;
-        }
-        if(keyHandler.left) {
-            dX--;
-        }
-        if(keyHandler.right) {
-            dX++;
-        }
-        position = new Position(position.getX() + dX, position.getY() + dY);
+        movement.update(keyHandler);
+        position.apply(movement);
     }
 
     @Override

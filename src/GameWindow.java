@@ -6,6 +6,7 @@ import java.awt.image.BufferStrategy;
 
 public class GameWindow extends JFrame {
     private Canvas canva;
+    Renderer renderer;
     public GameWindow(int width, int height, KeyHandler keyHandler) {
         setTitle("My game");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -18,6 +19,7 @@ public class GameWindow extends JFrame {
         setFocusable(true);
         addKeyListener(keyHandler);
         canva.createBufferStrategy(3);
+        renderer = new Renderer();
         setLocationRelativeTo(null);
         setVisible(true);
     }
@@ -28,12 +30,7 @@ public class GameWindow extends JFrame {
         graphics.setColor(Color.BLACK);
         graphics.fillRect(0, 0, canva.getWidth(), canva.getHeight());
 
-        game.getGameObjects().forEach(gameObject -> graphics.drawImage(
-                gameObject.getSprite(),
-                gameObject.getPosition().getX(),
-                gameObject.getPosition().getY(),
-                null
-        ));
+        renderer.render(game, graphics);
 
         graphics.dispose();
         bufferedStrategy.show();
