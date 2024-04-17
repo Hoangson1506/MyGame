@@ -1,4 +1,7 @@
+package main;
+
 import controller.KeyHandler;
+import main.Game;
 
 import javax.swing.*;
 import java.awt.*;

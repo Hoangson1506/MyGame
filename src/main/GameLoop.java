@@ -1,3 +1,7 @@
+package main;
+
+import main.Game;
+
 public class GameLoop implements Runnable{
     Game game;
     boolean running;

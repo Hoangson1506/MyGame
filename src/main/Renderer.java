@@ -1,3 +1,7 @@
+package main;
+
+import main.Game;
+
 import java.awt.*;
 
 public class Renderer {
