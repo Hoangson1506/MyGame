@@ -8,7 +8,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SpriteLibrary {
+<<<<<<< HEAD
     private static String basePath = "/sprites";
+=======
+    private static String basePath = "";
+>>>>>>> b7803ae47bf0f763707d444e4726a5839c5353f8
     private Map<String, Image> spriteSheets;
     public SpriteLibrary() {
         spriteSheets = new HashMap<>();
@@ -21,7 +25,11 @@ public class SpriteLibrary {
             String spritePath = basePath + "/" + folderName;
             String[] sheetsInFolder = getSheetsInFolder(spritePath);
             for(String sheet : sheetsInFolder) {
+<<<<<<< HEAD
                 spriteSheets.put(sheet.substring(0, sheet.length()-4), ImageLoader.loadImage(spritePath + "/" + sheet));
+=======
+                spriteSheets.put(sheet.substring(0, sheet.length()-4), ImageLoader.loadImage(sheet));
+>>>>>>> b7803ae47bf0f763707d444e4726a5839c5353f8
             }
         }
     }
@@ -37,7 +45,10 @@ public class SpriteLibrary {
         File file = new File(resource.getFile());
         return file.list((current, name) -> new File(current, name).isDirectory());
     }
+<<<<<<< HEAD
     public Image getSpriteSheet(String name) {
         return spriteSheets.get(name);
     }
+=======
+>>>>>>> b7803ae47bf0f763707d444e4726a5839c5353f8
 }
