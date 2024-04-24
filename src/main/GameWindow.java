@@ -1,7 +1,7 @@
 package main;
 
 import controller.KeyHandler;
-import main.Game;
+import game.state.State;
 
 import javax.swing.*;
 import java.awt.*;
@@ -26,14 +26,14 @@ public class GameWindow extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
     }
-    public void render(Game game) {
+    public void render(State state) {
         BufferStrategy bufferedStrategy = canva.getBufferStrategy();
         Graphics graphics = bufferedStrategy.getDrawGraphics();
 
         graphics.setColor(Color.BLACK);
         graphics.fillRect(0, 0, canva.getWidth(), canva.getHeight());
 
-        renderer.render(game, graphics);
+        renderer.render(state, graphics);
 
         graphics.dispose();
         bufferedStrategy.show();

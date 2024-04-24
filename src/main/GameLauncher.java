@@ -1,6 +1,7 @@
 package main;
 
-import main.Game;
+import game.Game;
+import game.GameLoop;
 
 public class GameLauncher {
     public static void main(String[] args) {

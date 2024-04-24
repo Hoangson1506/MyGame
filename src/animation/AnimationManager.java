@@ -1,6 +1,7 @@
 package animation;
 
-import main.Game;
+import game.Game;
+import mechanic.Direction;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -11,15 +12,18 @@ public class AnimationManager {
     private int updatesPerFrame;
     private int currentFrame;
     private int frameIndex;
+    private int directionIndex;
     public AnimationManager(SpriteLibrary spriteLibrary, String name) {
         this.spriteLibrary = spriteLibrary;
-        updatesPerFrame = 12;
+        updatesPerFrame = 10;
         currentFrame = 0;
         frameIndex = 0;
+        directionIndex = 0;
         this.currentSpriteSheet = (BufferedImage) spriteLibrary.getSpriteSheet(name);
     }
-    public void update() {
+    public void update(Direction direction) {
         currentFrame++;
+        directionIndex = direction.getAnimationRow();
         if(currentFrame >= updatesPerFrame) {
             currentFrame = 0;
             frameIndex++;
@@ -31,7 +35,8 @@ public class AnimationManager {
     public Image getSprite() {
         return currentSpriteSheet.getSubimage(
                 frameIndex * Game.SPRITE_SIZE   ,
-                0, Game.SPRITE_SIZE, Game.SPRITE_SIZE
-        );
+                directionIndex * Game.SPRITE_SIZE
+                , Game.SPRITE_SIZE, Game.SPRITE_SIZE
+        ).getScaledInstance(Game.SPRITE_SIZE * 2, Game.SPRITE_SIZE * 2, Image.SCALE_DEFAULT);
     }
 }

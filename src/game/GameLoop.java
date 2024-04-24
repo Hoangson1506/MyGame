@@ -1,6 +1,6 @@
-package main;
+package game;
 
-import main.Game;
+import game.Game;
 
 public class GameLoop implements Runnable{
     Game game;
