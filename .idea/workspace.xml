@@ -5,27 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ce6e3c5-fcf3-4ad1-a931-2a00ad979d51" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/game/state/PlayState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/state/State.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/map/GameMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/map/Tile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mechanic/Direction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/Camera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animation/AnimationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animation/AnimationManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animation/SpriteLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animation/SpriteLibrary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/GameLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GameLauncher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/GameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameLoop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GameWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Renderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/math/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/math/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mechanic/Movement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mechanic/Movement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/MeleeEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/MeleeEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/RangeEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/RangeEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/TankEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/TankEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/state/PlayState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/state/PlayState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/state/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/state/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/map/GameMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/map/GameMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/map/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/map/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mechanic/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mechanic/Direction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Camera.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +47,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.GameLauncher.executor&quot;: &quot;Run&quot;,
+    &quot;Application.wGameLauncher.executor&quot;: &quot;Run&quot;,
     &quot;Downloaded.Files.Path&quot;: &quot;D:\\oop&quot;,
     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
     &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
@@ -122,7 +111,11 @@
       <workItem from="1713488898461" duration="340000" />
       <workItem from="1713780685894" duration="4499000" />
       <workItem from="1713793293316" duration="1202000" />
-      <workItem from="1713958130755" duration="2510000" />
+      <workItem from="1713958130755" duration="3137000" />
+      <workItem from="1714046473528" duration="2178000" />
+      <workItem from="1714089500431" duration="3141000" />
+      <workItem from="1714096780984" duration="244000" />
+      <workItem from="1714097062652" duration="934000" />
     </task>
     <servers />
   </component>

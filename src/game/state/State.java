@@ -21,7 +21,7 @@ public abstract class State {
         this.keyHandler = keyHandler;
         spriteLibrary = new SpriteLibrary();
         gameObjects = new ArrayList<>();
-        gameMap = new GameMap(new Size(15, 15), spriteLibrary);
+        gameMap = new GameMap(new Size(30, 30), spriteLibrary);
         camera = new Camera(windowSize);
     }
     public void update() {
