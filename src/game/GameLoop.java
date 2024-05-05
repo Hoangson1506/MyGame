@@ -2,35 +2,40 @@ package game;
 
 import game.Game;
 
-public class GameLoop implements Runnable{
-    Game game;
-    boolean running;
+public class GameLoop implements Runnable {
+    private static final int TARGET_FPS = 60;
+    private static final long TARGET_TIME = 1000000000 / TARGET_FPS;
+    private Game game;
+    private boolean running;
     public GameLoop(Game game) {
         this.game = game;
     }
     @Override
     public void run() {
         running = true;
-        double FPS = 120;
-        double drawInterval = 1000000000/FPS;
         long lastTime = System.nanoTime();
+        long timer = System.currentTimeMillis();
         double delta = 0;
-        long currentTime;
-        while(running) {
-            currentTime = System.nanoTime();
-            delta += (currentTime - lastTime)/ drawInterval;
-            lastTime = System.nanoTime();
-            if (delta >= 1) {
+        while (running) {
+            long now = System.nanoTime();
+            long elapsedTime = now - lastTime;
+            delta += (double) elapsedTime / TARGET_TIME;
+            lastTime = now;
+            while (delta >= 1) {
                 update();
-                render();
                 delta--;
+            }
+            render();
+            if (System.currentTimeMillis() - timer > 1000) {
+                timer += 1000;
             }
         }
     }
-    public void update() {
+
+    private void update() {
         game.update();
     }
-    public void render() {
+    private void render() {
         game.render();
     }
 }

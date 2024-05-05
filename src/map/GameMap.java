@@ -25,9 +25,9 @@ public class GameMap {
     }
 
     public double getWidth() {
-        return tiles.length * Game.SPRITE_SIZE * 2;
+        return tiles.length * Game.SPRITE_SIZE;
     }
     public double getHeight() {
-        return tiles[0].length * Game.SPRITE_SIZE * 2;
+        return tiles[0].length * Game.SPRITE_SIZE;
     }
 }

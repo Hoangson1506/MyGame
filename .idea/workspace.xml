@@ -5,15 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ce6e3c5-fcf3-4ad1-a931-2a00ad979d51" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/UI/GameUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mechanic/CollisionBox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mechanic/Spawner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource/sprites/enemy/meleeEnemy.png" beforeDir="false" afterPath="$PROJECT_DIR$/resource/sprites/enemy/meleeEnemy.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animation/AnimationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animation/AnimationManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animation/SpriteLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animation/SpriteLibrary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/state/PlayState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/state/PlayState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/GameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameLoop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/state/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/state/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GameWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Renderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/map/GameMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/map/GameMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/map/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/map/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/math/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/math/Position.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mechanic/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mechanic/Direction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/object/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object/MeleeEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/MeleeEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object/RangeEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/RangeEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object/TankEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/TankEnemy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,6 +128,18 @@
       <workItem from="1714089500431" duration="3141000" />
       <workItem from="1714096780984" duration="244000" />
       <workItem from="1714097062652" duration="934000" />
+      <workItem from="1714183688794" duration="5134000" />
+      <workItem from="1714210319425" duration="2262000" />
+      <workItem from="1714487622968" duration="613000" />
+      <workItem from="1714526096962" duration="1216000" />
+      <workItem from="1714551897678" duration="3572000" />
+      <workItem from="1714612576856" duration="1789000" />
+      <workItem from="1714636378201" duration="3903000" />
+      <workItem from="1714647871984" duration="7000" />
+      <workItem from="1714695026984" duration="5555000" />
+      <workItem from="1714794366130" duration="785000" />
+      <workItem from="1714818851034" duration="4444000" />
+      <workItem from="1714874219539" duration="2816000" />
     </task>
     <servers />
   </component>

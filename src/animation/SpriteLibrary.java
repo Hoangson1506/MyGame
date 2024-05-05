@@ -26,7 +26,7 @@ public class SpriteLibrary {
     private void loadTiles(String basePath) {
         String[] sheetsInFolder = getImagesInFolder(basePath);
         for(String sheet : sheetsInFolder) {
-            tiles.put(sheet.substring(0, sheet.length()-4), ImageLoader.loadImage(basePath + "/" + sheet).getScaledInstance(Game.SPRITE_SIZE*2, Game.SPRITE_SIZE*2, Image.SCALE_FAST));
+            tiles.put(sheet.substring(0, sheet.length()-4), ImageLoader.loadImage(basePath + "/" + sheet));
         }
     }
 

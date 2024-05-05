@@ -32,11 +32,29 @@ public class AnimationManager {
             }
         }
     }
+    public void updateEnemySprite(Direction direction) {
+        currentFrame++;
+        directionIndex = direction.getAnimationRow();
+        if(currentFrame >= updatesPerFrame) {
+            currentFrame = 0;
+            frameIndex++;
+            if(frameIndex > currentSpriteSheet.getWidth()/ (Game.SPRITE_SIZE * 2) - 1) {
+                frameIndex = 0;
+            }
+        }
+    }
     public Image getSprite() {
         return currentSpriteSheet.getSubimage(
                 frameIndex * Game.SPRITE_SIZE   ,
                 directionIndex * Game.SPRITE_SIZE
                 , Game.SPRITE_SIZE, Game.SPRITE_SIZE
-        ).getScaledInstance(Game.SPRITE_SIZE * 2, Game.SPRITE_SIZE * 2, Image.SCALE_DEFAULT);
+        );
+    }
+    public Image getEnemySprite() {
+        return currentSpriteSheet.getSubimage(
+                frameIndex * Game.SPRITE_SIZE * 2,
+                directionIndex * Game.SPRITE_SIZE * 2,
+                Game.SPRITE_SIZE * 2, Game.SPRITE_SIZE * 2
+        );
     }
 }

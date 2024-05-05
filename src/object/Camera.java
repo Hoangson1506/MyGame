@@ -44,4 +44,14 @@ public class Camera {
     public Position getPosition() {
         return position;
     }
+
+    public double getWidth() {
+        return windowSize.getWidth();
+    }
+    public double getHeight() {
+        return windowSize.getHeight();
+    }
+    public Optional<GameObject> getObjectWithFocus() {
+        return objectWithFocus;
+    }
 }
