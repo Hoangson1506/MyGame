@@ -5,27 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ce6e3c5-fcf3-4ad1-a931-2a00ad979d51" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/UI/GameUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mechanic/CollisionBox.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mechanic/Spawner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mechanic/action/Action.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mechanic/action/Attack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mechanic/action/Die.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/object/Arrow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/sprites/enemy/meleeEnemy.png" beforeDir="false" afterPath="$PROJECT_DIR$/resource/sprites/enemy/meleeEnemy.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animation/AnimationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animation/AnimationManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animation/SpriteLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animation/SpriteLibrary.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/GameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameLoop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/state/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/state/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GameWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Renderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/map/GameMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/map/GameMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/math/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/math/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mechanic/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mechanic/Direction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mechanic/Spawner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mechanic/Spawner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/object/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/GameObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/object/MeleeEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/MeleeEnemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/object/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/RangeEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/RangeEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/TankEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/TankEnemy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +78,9 @@
       <recent name="map" />
       <recent name="object" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Game-Project-For-OOP\MyGame\resource\sprites\enemy" />
+    </key>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -139,11 +133,31 @@
       <workItem from="1714695026984" duration="5555000" />
       <workItem from="1714794366130" duration="785000" />
       <workItem from="1714818851034" duration="4444000" />
-      <workItem from="1714874219539" duration="2816000" />
+      <workItem from="1714874219539" duration="2955000" />
+      <workItem from="1714956987179" duration="5731000" />
+      <workItem from="1714963539981" duration="53000" />
+      <workItem from="1714966998729" duration="1454000" />
+      <workItem from="1715002170659" duration="2865000" />
+      <workItem from="1715053353950" duration="3133000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/object/Player.java</url>
+          <line>23</line>
+          <properties class="object.Player" method="&lt;init&gt;">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

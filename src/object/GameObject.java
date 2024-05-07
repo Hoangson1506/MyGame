@@ -7,6 +7,7 @@ import game.state.State;
 import math.Position;
 import math.Size;
 import mechanic.CollisionBox;
+import mechanic.Direction;
 
 import java.awt.*;
 
@@ -14,6 +15,7 @@ public abstract class GameObject {
     protected Position position;
     protected Size size;
     protected AnimationManager animationManager;
+    protected Direction direction;
     public GameObject(SpriteLibrary spriteLibrary, String name) {
         animationManager = new AnimationManager(spriteLibrary, name);
     }
@@ -32,5 +34,8 @@ public abstract class GameObject {
 
     public Size getSize() {
         return size;
+    }
+    public Direction getDirection() {
+        return direction;
     }
 }

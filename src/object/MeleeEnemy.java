@@ -9,6 +9,8 @@ import math.Vector2D;
 import mechanic.CollisionBox;
 import mechanic.Direction;
 import mechanic.Spawner;
+import mechanic.action.Attack;
+import mechanic.action.Die;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -20,7 +22,13 @@ public class MeleeEnemy extends GameObject{
     private Vector2D vector2D;
     private double speed;
     private GameObject player;
-    Direction direction;
+    private boolean isAttacking;
+    private Attack attack;
+    private boolean isDead;
+    private Die die;
+    private int life;
+    private int attackDuration;
+    private int deathDuration;
     public MeleeEnemy(SpriteLibrary spriteLibrary, String name, Position position, Camera camera) {
         super(spriteLibrary, name);
         this.position = position;
@@ -30,17 +38,37 @@ public class MeleeEnemy extends GameObject{
         vector2D = new Vector2D(1, 1);
         speed = 1.2;
         this.player = camera.getObjectWithFocus().get();
+        attack = new Attack(this, "SkeletonAttack");
+        die = new Die(this, "SkeletonDeath");
+        isDead = false;
+        isAttacking = false;
+        attackDuration = 40;
+        deathDuration = 40;
+        life = 100;
     }
     @Override
     public void update(State state) {
-        vector2D = getEnemyVector();
-        vector2D.normalize();
-        vector2D.multiply(speed);
         handleCollisions(state);
-        position.setX(position.getX() + vector2D.getX());
-        position.setY(position.getY() + vector2D.getY());
-        manageDirection();
-        animationManager.updateEnemySprite(direction);
+        if(isDead) {
+            isDead = die.enemyUpdate(isDead);
+            deathDuration--;
+            if(deathDuration<=0) {
+                state.getGameObjects().remove(this);
+            }
+        }
+        else if(isAttacking) {
+            isAttacking = attack.enemyUpdate(isAttacking);
+            attackDuration--;
+        }
+        else {
+            vector2D = getEnemyVector();
+            vector2D.normalize();
+            vector2D.multiply(speed);
+            position.setX(position.getX() + vector2D.getX());
+            position.setY(position.getY() + vector2D.getY());
+            manageDirection();
+            animationManager.updateEnemySprite(direction);
+        }
     }
     private Vector2D getEnemyVector() {
         double currentX = position.getX();
@@ -78,10 +106,15 @@ public class MeleeEnemy extends GameObject{
     @Override
     public void handleCollision(GameObject other) {
         if(other instanceof Player) {
-            State state = Game.getCurrentState();
-            state.removeGameObject(this);
-            Player player1 = (Player) player;
-            player1.life -= 5;
+            isAttacking = true;
+            if(attackDuration == 0) {
+                Player.life -= 3;
+                attackDuration = 40;
+            }
+            life--;
+            if(life <= 0) {
+                isDead = true;
+            }
         }
     }
 
@@ -90,6 +123,12 @@ public class MeleeEnemy extends GameObject{
     }
     @Override
     public Image getSprite() {
+        if(isDead) {
+            return die.getEnemySprite();
+        }
+        if(isAttacking) {
+            return attack.getEnemySprite();
+        }
         return animationManager.getEnemySprite();
     }
 }

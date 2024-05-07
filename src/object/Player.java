@@ -19,7 +19,6 @@ public class Player extends GameObject{
 
     private Movement movement;
     private double speed;
-    private Direction direction;
     private static int maxLife;
     public static int life;
     public Player(SpriteLibrary spriteLibrary, KeyHandler keyHandler) {

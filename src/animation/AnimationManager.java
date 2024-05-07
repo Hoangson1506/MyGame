@@ -32,9 +32,29 @@ public class AnimationManager {
             }
         }
     }
+    public void update() {
+        currentFrame++;
+        if(currentFrame >= updatesPerFrame) {
+            currentFrame = 0;
+            frameIndex++;
+            if(frameIndex > currentSpriteSheet.getWidth()/ Game.SPRITE_SIZE - 1) {
+                frameIndex = 0;
+            }
+        }
+    }
     public void updateEnemySprite(Direction direction) {
         currentFrame++;
         directionIndex = direction.getAnimationRow();
+        if(currentFrame >= updatesPerFrame) {
+            currentFrame = 0;
+            frameIndex++;
+            if(frameIndex > currentSpriteSheet.getWidth()/ (Game.SPRITE_SIZE * 2) - 1) {
+                frameIndex = 0;
+            }
+        }
+    }
+    public void updateEnemySprite() {
+        currentFrame++;
         if(currentFrame >= updatesPerFrame) {
             currentFrame = 0;
             frameIndex++;

@@ -18,7 +18,7 @@ public class Spawner {
     public Spawner(State state) {
         random = new Random();
         camera = state.getCamera();
-        spawnInterval = 500; // Set the spawn interval to 1 seconds
+        spawnInterval = 750; // Set the spawn interval to 1 seconds
         lastSpawnTime = System.currentTimeMillis();
     }
 

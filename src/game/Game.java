@@ -11,7 +11,6 @@ public class Game {
     private GameWindow gameWindow;
     private KeyHandler keyHandler;
     private static State state;
-
     public Game(int width, int height) {
         keyHandler = new KeyHandler();
         gameWindow = new GameWindow(width, height, keyHandler);

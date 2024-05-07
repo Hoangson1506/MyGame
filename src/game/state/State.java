@@ -19,7 +19,7 @@ public abstract class State {
     protected List<GameObject> gameObjects;
     private List<GameObject> gameObjectsToRemove;
     protected KeyHandler keyHandler;
-    protected SpriteLibrary spriteLibrary;
+    public static SpriteLibrary spriteLibrary;
     protected Camera camera;
     Spawner spawner;
     public State(Size windowSize, KeyHandler keyHandler) {
