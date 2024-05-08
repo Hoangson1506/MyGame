@@ -5,18 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ce6e3c5-fcf3-4ad1-a931-2a00ad979d51" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/mechanic/action/Action.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mechanic/action/Attack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mechanic/action/Die.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/Arrow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mechanic/action/TakeHit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/object/projectile/Arrow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/object/projectile/Projectile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animation/AnimationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animation/AnimationManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/KeyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/MouseInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/MouseInput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/state/PlayState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/state/PlayState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/state/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/state/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mechanic/Spawner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mechanic/Spawner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GameWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mechanic/Movement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mechanic/Movement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object/Arrow.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/object/MeleeEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/MeleeEnemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/object/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object/RangeEnemy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object/TankEnemy.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,25 +143,13 @@
       <workItem from="1714966998729" duration="1454000" />
       <workItem from="1715002170659" duration="2865000" />
       <workItem from="1715053353950" duration="3133000" />
+      <workItem from="1715056640519" duration="35000" />
+      <workItem from="1715082016713" duration="7621000" />
+      <workItem from="1715165538791" duration="8901000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/object/Player.java</url>
-          <line>23</line>
-          <properties class="object.Player" method="&lt;init&gt;">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

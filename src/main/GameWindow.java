@@ -1,6 +1,7 @@
 package main;
 import UI.GameUI;
 import controller.KeyHandler;
+import controller.MouseInput;
 import game.state.State;
 
 import javax.swing.*;
@@ -11,7 +12,7 @@ public class GameWindow extends JFrame {
     private Canvas canva;
     Renderer renderer;
     private GameUI gameUI;
-    public GameWindow(int width, int height, KeyHandler keyHandler) {
+    public GameWindow(int width, int height, KeyHandler keyHandler, MouseInput mouseInput) {
         setTitle("My Game");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(true);
@@ -21,6 +22,7 @@ public class GameWindow extends JFrame {
         canva = new Canvas();
         canva.setPreferredSize(new Dimension(width, height));
         canva.setFocusable(true);
+        canva.addMouseMotionListener(mouseInput);
         add(canva);
         pack();
 

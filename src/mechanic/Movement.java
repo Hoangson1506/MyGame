@@ -1,6 +1,7 @@
 package mechanic;
 
 import controller.KeyHandler;
+import controller.MouseInput;
 import math.Vector2D;
 
 public class Movement {

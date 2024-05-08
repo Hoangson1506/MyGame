@@ -1,31 +1,30 @@
 package controller;
 
+import math.Position;
+
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
-public class MouseInput implements MouseListener {
+public class MouseInput implements MouseMotionListener {
+    private Position mousePosition;
+    public MouseInput() {
+        mousePosition = new Position(0, 0);
+    }
+
     @Override
-    public void mouseClicked(MouseEvent e) {
+    public void mouseDragged(MouseEvent e) {
 
     }
 
     @Override
-    public void mousePressed(MouseEvent e) {
-
+    public void mouseMoved(MouseEvent e) {
+        double mouseX = e.getPoint().getX();
+        double mouseY = e.getPoint().getY();
+        mousePosition.setX(mouseX);
+        mousePosition.setY(mouseY);
     }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-
+    public Position getMousePosition() {
+        return mousePosition;
     }
 }

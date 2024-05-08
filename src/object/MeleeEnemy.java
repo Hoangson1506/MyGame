@@ -11,6 +11,8 @@ import mechanic.Direction;
 import mechanic.Spawner;
 import mechanic.action.Attack;
 import mechanic.action.Die;
+import mechanic.action.TakeHit;
+import object.projectile.Arrow;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -26,9 +28,12 @@ public class MeleeEnemy extends GameObject{
     private Attack attack;
     private boolean isDead;
     private Die die;
+    private TakeHit takeHit;
+    private boolean isHurt;
     private int life;
     private int attackDuration;
     private int deathDuration;
+    private int hurtDuration;
     public MeleeEnemy(SpriteLibrary spriteLibrary, String name, Position position, Camera camera) {
         super(spriteLibrary, name);
         this.position = position;
@@ -40,10 +45,13 @@ public class MeleeEnemy extends GameObject{
         this.player = camera.getObjectWithFocus().get();
         attack = new Attack(this, "SkeletonAttack");
         die = new Die(this, "SkeletonDeath");
+        takeHit = new TakeHit(this, "SkeletonHurt");
+        isHurt = false;
         isDead = false;
         isAttacking = false;
         attackDuration = 40;
         deathDuration = 40;
+        hurtDuration = 40;
         life = 100;
     }
     @Override
@@ -55,6 +63,10 @@ public class MeleeEnemy extends GameObject{
             if(deathDuration<=0) {
                 state.getGameObjects().remove(this);
             }
+        }
+        else if(isHurt) {
+            isHurt = takeHit.enemyUpdate(isHurt);
+            hurtDuration--;
         }
         else if(isAttacking) {
             isAttacking = attack.enemyUpdate(isAttacking);
@@ -84,8 +96,6 @@ public class MeleeEnemy extends GameObject{
             handleCollision(gameObject);
         }
     }
-
-
     @Override
     public CollisionBox getCollisionBox() {
         return new CollisionBox(
@@ -116,6 +126,16 @@ public class MeleeEnemy extends GameObject{
                 isDead = true;
             }
         }
+        if(other instanceof Arrow) {
+            isHurt = true;
+            if(hurtDuration == 0) {
+                life -= Arrow.damage;
+                hurtDuration = 40;
+            }
+            if(life <= 0) {
+                isDead = true;
+            }
+        }
     }
 
     private void manageDirection() {
@@ -125,6 +145,9 @@ public class MeleeEnemy extends GameObject{
     public Image getSprite() {
         if(isDead) {
             return die.getEnemySprite();
+        }
+        if(isHurt) {
+            return takeHit.getEnemySprite();
         }
         if(isAttacking) {
             return attack.getEnemySprite();

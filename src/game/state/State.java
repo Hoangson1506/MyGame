@@ -2,14 +2,12 @@ package game.state;
 
 import animation.SpriteLibrary;
 import controller.KeyHandler;
+import controller.MouseInput;
 import map.GameMap;
 import math.Size;
 import mechanic.Spawner;
 import object.Camera;
 import object.GameObject;
-import object.MeleeEnemy;
-import object.Player;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,11 +17,13 @@ public abstract class State {
     protected List<GameObject> gameObjects;
     private List<GameObject> gameObjectsToRemove;
     protected KeyHandler keyHandler;
+    protected MouseInput mouseInput;
     public static SpriteLibrary spriteLibrary;
     protected Camera camera;
     Spawner spawner;
-    public State(Size windowSize, KeyHandler keyHandler) {
+    public State(Size windowSize, KeyHandler keyHandler, MouseInput mouseInput) {
         this.keyHandler = keyHandler;
+        this.mouseInput = mouseInput;
         spriteLibrary = new SpriteLibrary();
         gameObjects = new ArrayList<>();
         gameObjectsToRemove = new ArrayList<>();
@@ -55,9 +55,5 @@ public abstract class State {
 
     public List<GameObject> getCollidingObjects(GameObject gameObject) {
         return gameObjects.stream().filter(other -> other.collidesWith(gameObject)).collect(Collectors.toList());
-    }
-
-    public void removeGameObject(GameObject gameObject) {
-        gameObjectsToRemove.add(gameObject);
     }
 }
