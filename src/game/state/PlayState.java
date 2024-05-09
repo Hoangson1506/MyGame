@@ -11,5 +11,6 @@ public class PlayState extends State{
         Player player = new Player(spriteLibrary, keyHandler, mouseInput);
         gameObjects.add(player);
         camera.focusOn(player);
+        spawner.start();
     }
 }

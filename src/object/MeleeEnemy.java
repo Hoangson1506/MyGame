@@ -8,18 +8,15 @@ import math.Size;
 import math.Vector2D;
 import mechanic.CollisionBox;
 import mechanic.Direction;
-import mechanic.Spawner;
 import mechanic.action.Attack;
 import mechanic.action.Die;
 import mechanic.action.TakeHit;
 import object.projectile.Arrow;
 
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.Iterator;
 
 public class MeleeEnemy extends GameObject{
-    private Spawner spawner;
     private Camera camera;
     private Vector2D vector2D;
     private double speed;
@@ -121,7 +118,6 @@ public class MeleeEnemy extends GameObject{
                 Player.life -= 3;
                 attackDuration = 40;
             }
-            life--;
             if(life <= 0) {
                 isDead = true;
             }

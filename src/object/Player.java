@@ -56,7 +56,8 @@ public class Player extends GameObject {
         manageDirection();
         animationManager.update(direction);
         if(life <= 0) {
-            state.getGameObjects().remove(this);
+
+            Game.endGame();
         }
     }
     @Override

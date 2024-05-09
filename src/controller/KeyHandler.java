@@ -4,7 +4,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class KeyHandler implements KeyListener {
-    public boolean up, down, left, right, shoot, sprint;
+    public boolean up, down, left, right, shoot, sprint, restart;
     private boolean[] pressed;
     public KeyHandler() {
         pressed = new boolean[256];
@@ -38,5 +38,6 @@ public class KeyHandler implements KeyListener {
         right = pressed[KeyEvent.VK_D];
         shoot = pressed[KeyEvent.VK_SPACE];
         sprint = pressed[KeyEvent.VK_SHIFT];
+        restart = pressed[KeyEvent.VK_ENTER];
     }
 }

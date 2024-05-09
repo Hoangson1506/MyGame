@@ -15,10 +15,10 @@ public class Camera {
         this.position = new Position(0, 0);
     }
     public void focusOn(GameObject gameObject) {
-        objectWithFocus = Optional.of(gameObject);
+        objectWithFocus = Optional.ofNullable(gameObject);
     }
     public void update(State state) {
-        if(objectWithFocus.isPresent()) {
+        if(this.objectWithFocus != null && objectWithFocus.isPresent()) {
             Position objectPosition = objectWithFocus.get().getPosition();
             this.position.setX(objectPosition.getX() - windowSize.getWidth()/2);
             this.position.setY(objectPosition.getY() - windowSize.getHeight()/2);

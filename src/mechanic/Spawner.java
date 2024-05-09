@@ -14,17 +14,19 @@ public class Spawner {
     private Camera camera;
     private long spawnInterval;
     private long lastSpawnTime;
+    private boolean isSpawning;
 
     public Spawner(State state) {
         random = new Random();
         camera = state.getCamera();
         spawnInterval = 750; // Set the spawn interval to 1 seconds
         lastSpawnTime = System.currentTimeMillis();
+        isSpawning = true;
     }
 
     public void update(State state) {
         long currentTime = System.currentTimeMillis();
-        if (currentTime - lastSpawnTime >= spawnInterval) {
+        if (currentTime - lastSpawnTime >= spawnInterval && isSpawning) {
             spawnEnemy(state);
             lastSpawnTime = currentTime;
         }
@@ -35,7 +37,6 @@ public class Spawner {
         double x = calculateSpawnX();
         double y = calculateSpawnY();
 
-        // Create and add enemy to game objects
         state.getGameObjects().add(new MeleeEnemy(state.getSpriteLibrary(), "meleeEnemy", new Position(x, y), camera));
     }
 
@@ -44,15 +45,13 @@ public class Spawner {
         double x;
         switch (side) {
             case 0:
-                // Left side of the camera
                 x = camera.getPosition().getX() - 200 + random.nextDouble() * 1000;
                 break;
             case 1:
-                // Right side of the camera
                 x = camera.getPosition().getX() - 200 + random.nextDouble() * 1000;
                 break;
             default:
-                x = 0; // Default to 0 in case of unexpected side
+                x = 0;
         }
         return x;
     }
@@ -62,16 +61,20 @@ public class Spawner {
         double y;
         switch (side) {
             case 0:
-                // Top side of the camera
                 y = camera.getPosition().getY() - 200 - random.nextDouble() * 200;
                 break;
             case 1:
-                // Bottom side of the camera
                 y = camera.getPosition().getY() + camera.getHeight() + random.nextDouble() * 200;
                 break;
             default:
-                y = 0; // Default to 0 in case of unexpected side
+                y = 0;
         }
         return y;
+    }
+    public void stop() {
+        isSpawning = false;
+    }
+    public void start() {
+        isSpawning = true;
     }
 }
