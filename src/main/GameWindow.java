@@ -2,6 +2,7 @@ package main;
 import UI.GameUI;
 import controller.KeyHandler;
 import controller.MouseInput;
+import game.state.MenuState;
 import game.state.State;
 
 import javax.swing.*;
@@ -22,12 +23,11 @@ public class GameWindow extends JFrame {
         canva = new Canvas();
         canva.setPreferredSize(new Dimension(width, height));
         canva.setFocusable(true);
+        canva.addMouseListener(mouseInput);
         canva.addMouseMotionListener(mouseInput);
+        canva.addKeyListener(keyHandler);
         add(canva);
         pack();
-
-        setFocusable(true);
-        addKeyListener(keyHandler);
 
         canva.createBufferStrategy(3);
         renderer = new Renderer();
@@ -43,7 +43,9 @@ public class GameWindow extends JFrame {
         graphics.fillRect(0, 0, canva.getWidth(), canva.getHeight());
 
         renderer.render(state, graphics);
-        gameUI.render(graphics);
+        if(!(state instanceof MenuState)) {
+            gameUI.render(graphics);
+        }
 
         graphics.dispose();
         bufferedStrategy.show();

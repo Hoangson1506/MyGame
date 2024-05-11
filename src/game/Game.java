@@ -3,6 +3,7 @@ package game;
 import controller.KeyHandler;
 import controller.MouseInput;
 import game.state.EndState;
+import game.state.MenuState;
 import game.state.PlayState;
 import game.state.State;
 import main.GameWindow;
@@ -19,7 +20,7 @@ public class Game {
         keyHandler = new KeyHandler();
         mouseInput = new MouseInput();
         gameWindow = new GameWindow(width, height, keyHandler, mouseInput);
-        state = new PlayState(new Size(width, height), keyHandler, mouseInput);
+        state = new MenuState(new Size(width, height), keyHandler, mouseInput);
         this.width = width;
         this.height = height;
     }

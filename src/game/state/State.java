@@ -34,7 +34,6 @@ public abstract class State {
     public void update() {
         spawner.update(this);
         new ArrayList<>(gameObjects).forEach(gameObject -> gameObject.update(this));
-        camera.update(this);
         gameObjects.removeAll(gameObjectsToRemove);
         gameObjectsToRemove.clear();
     }

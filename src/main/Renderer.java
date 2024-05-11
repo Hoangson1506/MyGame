@@ -1,6 +1,7 @@
 package main;
 
 import game.Game;
+import game.state.MenuState;
 import game.state.State;
 import map.Tile;
 import object.Camera;
@@ -13,10 +14,16 @@ import java.util.List;
 
 public class Renderer {
     public synchronized void render(State state, Graphics graphics) {
-        renderMap(state, graphics);
+        if(state instanceof MenuState) {
+            renderMenu(state, graphics);
+        }
+        else {
+            renderMap(state, graphics);
+            renderGameObjects(state, graphics);
+        }
+    }
+    private void renderGameObjects(State state, Graphics graphics) {
         Camera camera = state.getCamera();
-
-        // Iterate over the snapshot
         for (GameObject gameObject : state.getGameObjects()) {
             graphics.drawImage(
                     gameObject.getSprite(),
@@ -26,7 +33,6 @@ public class Renderer {
             );
         }
     }
-
     private void renderMap(State state, Graphics graphics) {
         Tile[][] tiles = state.getGameMap().getTiles();
         Camera camera = state.getCamera();
@@ -40,5 +46,8 @@ public class Renderer {
                 );
             }
         }
+    }
+    private void renderMenu(State state, Graphics graphics) {
+        ((MenuState) state).renderMenu(graphics);
     }
 }

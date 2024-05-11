@@ -28,7 +28,6 @@ public class Player extends GameObject {
     private static int maxLife;
     public static int life;
     private int arrowSpeed;
-    private boolean shooting;
     private long lastShootTime;
     private long shootCooldown;
     public Player(SpriteLibrary spriteLibrary, KeyHandler keyHandler, MouseInput mouseInput) {
@@ -43,7 +42,6 @@ public class Player extends GameObject {
         maxLife = 100;
         life = maxLife;
         arrowSpeed = 6;
-        shooting = false;
         shootCooldown = 800; // in milisecs
         lastShootTime = System.currentTimeMillis();
     }
@@ -56,7 +54,6 @@ public class Player extends GameObject {
         manageDirection();
         animationManager.update(direction);
         if(life <= 0) {
-
             Game.endGame();
         }
     }
@@ -106,7 +103,7 @@ public class Player extends GameObject {
         return new Vector2D(arrowX * arrowSpeed, arrowY * arrowSpeed);
     }
     private void handleShooting(State state) {
-        if (keyHandler.shoot && System.currentTimeMillis() - lastShootTime >= shootCooldown) {
+        if (mouseInput.shoot && System.currentTimeMillis() - lastShootTime >= shootCooldown) {
             shoot(state);
             lastShootTime = System.currentTimeMillis();
         }

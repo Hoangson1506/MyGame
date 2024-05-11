@@ -5,23 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ce6e3c5-fcf3-4ad1-a931-2a00ad979d51" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/game/state/EndState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/state/MenuState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/GameUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/GameUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/KeyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/MouseInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/MouseInput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/state/PlayState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/state/PlayState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mechanic/CollisionBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mechanic/CollisionBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/state/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/state/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GameWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Renderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mechanic/Spawner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mechanic/Spawner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mechanic/action/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mechanic/action/Action.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mechanic/action/Attack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mechanic/action/Attack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mechanic/action/Die.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mechanic/action/Die.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mechanic/action/TakeHit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mechanic/action/TakeHit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Camera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/MeleeEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/MeleeEnemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/object/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/projectile/Arrow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/projectile/Arrow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/projectile/Projectile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/projectile/Projectile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,33 +46,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.GameLauncher.executor": "Run",
-    "Application.wGameLauncher.executor": "Run",
-    "Downloaded.Files.Path": "D:\\oop",
-    "Downloaded.Files.Path.Enabled": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Game-Project-For-OOP/MyGame",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.GameLauncher.executor&quot;: &quot;Run&quot;,
+    &quot;Application.wGameLauncher.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path&quot;: &quot;D:\\oop&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Game-Project-For-OOP/MyGame&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="map" />
@@ -156,7 +149,10 @@
       <workItem from="1715264069601" duration="37000" />
       <workItem from="1715264158571" duration="103000" />
       <workItem from="1715264284030" duration="23000" />
-      <workItem from="1715264366457" duration="960000" />
+      <workItem from="1715264366457" duration="1330000" />
+      <workItem from="1715299921918" duration="7585000" />
+      <workItem from="1715349212050" duration="3229000" />
+      <workItem from="1715399659813" duration="861000" />
     </task>
     <servers />
   </component>

@@ -3,6 +3,7 @@ package game.state;
 import controller.KeyHandler;
 import controller.MouseInput;
 import math.Size;
+import object.Camera;
 import object.Player;
 
 public class PlayState extends State{
@@ -12,5 +13,10 @@ public class PlayState extends State{
         gameObjects.add(player);
         camera.focusOn(player);
         spawner.start();
+    }
+    @Override
+    public void update() {
+        camera.update(this);
+        super.update();
     }
 }
