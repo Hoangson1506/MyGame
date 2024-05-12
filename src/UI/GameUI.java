@@ -75,7 +75,7 @@ public class GameUI {
         return stringBuilder.toString();
     }
     private void evolvedEnemy(Graphics g2) {
-        if(timesInSeconds % 3 == 0 && timesInSeconds != 0) {
+        if(timesInSeconds % 45 == 0 && timesInSeconds != 0) {
             enemyEvolved = true;
         }
         if(enemyEvolved) {
@@ -106,6 +106,7 @@ public class GameUI {
                 Player.maxExp += 250;
                 Player.shootCooldown -= 50;
                 Player.speed += 0.15;
+                Player.life = 100;
                 Arrow.damage += 2;
                 levelUpStartTime = -1;
             }
