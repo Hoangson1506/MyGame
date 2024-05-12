@@ -20,7 +20,7 @@ public abstract class State {
     protected MouseInput mouseInput;
     public static SpriteLibrary spriteLibrary;
     protected Camera camera;
-    Spawner spawner;
+    protected Spawner spawner;
     public State(Size windowSize, KeyHandler keyHandler, MouseInput mouseInput) {
         this.keyHandler = keyHandler;
         this.mouseInput = mouseInput;

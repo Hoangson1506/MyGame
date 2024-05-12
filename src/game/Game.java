@@ -11,7 +11,7 @@ import math.Size;
 
 public class Game {
     public static int SPRITE_SIZE = 32;
-    private GameWindow gameWindow;
+    private static GameWindow gameWindow;
     private static KeyHandler keyHandler;
     private static MouseInput mouseInput;
     private static State state;
@@ -35,6 +35,7 @@ public class Game {
     }
     public static void endGame() {
         state = new EndState(new Size(width, height), keyHandler, mouseInput);
+        gameWindow.reset();
     }
     public static void startGame() {
         state = new PlayState(new Size(width, height), keyHandler, mouseInput);

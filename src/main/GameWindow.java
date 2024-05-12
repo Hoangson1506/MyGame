@@ -2,7 +2,9 @@ package main;
 import UI.GameUI;
 import controller.KeyHandler;
 import controller.MouseInput;
+import game.state.EndState;
 import game.state.MenuState;
+import game.state.PlayState;
 import game.state.State;
 
 import javax.swing.*;
@@ -43,11 +45,18 @@ public class GameWindow extends JFrame {
         graphics.fillRect(0, 0, canva.getWidth(), canva.getHeight());
 
         renderer.render(state, graphics);
-        if(!(state instanceof MenuState)) {
+        if(state instanceof PlayState) {
+            gameUI.startTime();
             gameUI.render(graphics);
         }
-
+        if(state instanceof EndState) {
+            gameUI.stopTime();
+            gameUI.render(graphics);
+        }
         graphics.dispose();
         bufferedStrategy.show();
+    }
+    public void reset() {
+        gameUI.reset();
     }
 }

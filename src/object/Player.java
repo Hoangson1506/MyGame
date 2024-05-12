@@ -1,6 +1,4 @@
 package object;
-
-import animation.AnimationManager;
 import animation.SpriteLibrary;
 import controller.KeyHandler;
 import controller.MouseInput;
@@ -12,24 +10,26 @@ import math.Vector2D;
 import mechanic.CollisionBox;
 import mechanic.Direction;
 import mechanic.Movement;
+import mechanic.action.TakeHit;
 import object.projectile.Arrow;
 
 import java.awt.*;
-import java.awt.image.BufferedImage;
 
 public class Player extends GameObject {
     //Input handler
     private KeyHandler keyHandler;
     private MouseInput mouseInput;
     private Movement movement;
-    private Arrow arrow;
     // Player's stats
-    private double speed;
+    public static double speed;
     private static int maxLife;
     public static int life;
+    public static long exp, maxExp;
     private int arrowSpeed;
     private long lastShootTime;
-    private long shootCooldown;
+    public static long shootCooldown;
+    private TakeHit takeHit;
+    public static boolean isHurt;
     public Player(SpriteLibrary spriteLibrary, KeyHandler keyHandler, MouseInput mouseInput) {
         super(spriteLibrary, "player");
         size = new Size(Game.SPRITE_SIZE , Game.SPRITE_SIZE );
@@ -44,17 +44,33 @@ public class Player extends GameObject {
         arrowSpeed = 6;
         shootCooldown = 800; // in milisecs
         lastShootTime = System.currentTimeMillis();
+        maxExp = 250;
+        exp = 0;
+        takeHit = new TakeHit(this, "PlayerHurt");
+        isHurt = false;
     }
     @Override
     public void update(State state) {
         handleCollisions(state);
-        movement.update(keyHandler);
-        position.apply(movement);
-        handleShooting(state);
-        manageDirection();
-        animationManager.update(direction);
-        if(life <= 0) {
-            Game.endGame();
+        if(isHurt) {
+            isHurt = takeHit.playerUpdate(isHurt);
+            movement.update(keyHandler);
+            position.apply(movement);
+            manageDirection();
+            animationManager.update(direction);
+            if(life <= 0) {
+                Game.endGame();
+            }
+        }
+        else {
+            movement.update(keyHandler);
+            position.apply(movement);
+            handleShooting(state);
+            manageDirection();
+            animationManager.update(direction);
+            if(life <= 0) {
+                Game.endGame();
+            }
         }
     }
     @Override
@@ -115,5 +131,11 @@ public class Player extends GameObject {
         Vector2D arrowSpeed = calculateProjectileSpeed(state);
         arrow.setSpeed(arrowSpeed);
         state.getGameObjects().add(arrow);
+    }
+    public Image getSprite() {
+        if(isHurt) {
+            return takeHit.getSprite();
+        }
+        return animationManager.getSprite();
     }
 }

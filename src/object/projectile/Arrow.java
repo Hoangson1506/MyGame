@@ -17,7 +17,7 @@ public class Arrow extends Projectile {
         super(spriteLibrary, name);
         lifespan = 90;
         angle = 0;
-        damage = 10;
+        damage = 20;
     }
     public void setSpeed(Vector2D velocity) {
         speed = velocity;

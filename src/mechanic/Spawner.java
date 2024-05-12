@@ -12,14 +12,14 @@ import java.util.TimerTask;
 public class Spawner {
     private Random random;
     private Camera camera;
-    private long spawnInterval;
+    public static long spawnInterval;
     private long lastSpawnTime;
     private boolean isSpawning;
 
     public Spawner(State state) {
         random = new Random();
         camera = state.getCamera();
-        spawnInterval = 750;
+        spawnInterval = 1000;
         lastSpawnTime = System.currentTimeMillis();
         isSpawning = true;
     }

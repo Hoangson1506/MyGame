@@ -5,16 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ce6e3c5-fcf3-4ad1-a931-2a00ad979d51" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/game/state/MenuState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/MouseInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/MouseInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/GameUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/GameUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/state/PlayState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/state/PlayState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/GameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameLoop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/state/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/state/State.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GameWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Renderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mechanic/Spawner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mechanic/Spawner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object/MeleeEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/MeleeEnemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/object/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object/projectile/Arrow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/projectile/Arrow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +152,8 @@
       <workItem from="1715264366457" duration="1330000" />
       <workItem from="1715299921918" duration="7585000" />
       <workItem from="1715349212050" duration="3229000" />
-      <workItem from="1715399659813" duration="861000" />
+      <workItem from="1715399659813" duration="2221000" />
+      <workItem from="1715480770831" duration="7804000" />
     </task>
     <servers />
   </component>

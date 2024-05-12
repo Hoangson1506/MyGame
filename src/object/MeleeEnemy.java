@@ -1,5 +1,6 @@
 package object;
 
+import UI.GameUI;
 import animation.SpriteLibrary;
 import game.Game;
 import game.state.State;
@@ -19,7 +20,16 @@ import java.util.Iterator;
 public class MeleeEnemy extends GameObject{
     private Camera camera;
     private Vector2D vector2D;
+    // base
+    public static double baseSpeed = 1.2;
+    public static int baseDamage = 3;
+    public static int baseLife = 100;
+    public static int baseValue = 10;
+    // current
     private double speed;
+    private int damage;
+    private int life;
+    private int value;
     private GameObject player;
     private boolean isAttacking;
     private Attack attack;
@@ -27,7 +37,6 @@ public class MeleeEnemy extends GameObject{
     private Die die;
     private TakeHit takeHit;
     private boolean isHurt;
-    private int life;
     private int attackDuration;
     private int deathDuration;
     private int hurtDuration;
@@ -38,7 +47,10 @@ public class MeleeEnemy extends GameObject{
         size = new Size(Game.SPRITE_SIZE * 2, Game.SPRITE_SIZE * 2);
         this.camera = camera;
         vector2D = new Vector2D(1, 1);
-        speed = 1.2;
+        speed = baseSpeed;
+        damage = baseDamage;
+        life = baseLife;
+        value = baseValue;
         this.player = camera.getObjectWithFocus().get();
         attack = new Attack(this, "SkeletonAttack");
         die = new Die(this, "SkeletonDeath");
@@ -48,8 +60,7 @@ public class MeleeEnemy extends GameObject{
         isAttacking = false;
         attackDuration = 40;
         deathDuration = 40;
-        hurtDuration = 40;
-        life = 100;
+        hurtDuration = 0;
     }
     @Override
     public void update(State state) {
@@ -59,6 +70,8 @@ public class MeleeEnemy extends GameObject{
             deathDuration--;
             if(deathDuration<=0) {
                 state.getGameObjects().remove(this);
+                GameUI.score += value;
+                Player.exp += value;
             }
         }
         else if(isHurt) {
@@ -114,8 +127,9 @@ public class MeleeEnemy extends GameObject{
     public void handleCollision(GameObject other) {
         if(other instanceof Player) {
             isAttacking = true;
-            if(attackDuration == 0) {
-                Player.life -= 3;
+            if(attackDuration == 0 || attackDuration == 40) {
+                Player.life -= damage;
+                Player.isHurt = true;
                 attackDuration = 40;
             }
             if(life <= 0) {
@@ -149,5 +163,11 @@ public class MeleeEnemy extends GameObject{
             return attack.getEnemySprite();
         }
         return animationManager.getEnemySprite();
+    }
+    public static void evolve() {
+        baseValue += 5;
+        baseDamage += 1;
+        baseLife += 15;
+        baseSpeed += 0.25;
     }
 }
