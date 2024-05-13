@@ -112,6 +112,7 @@ public class GameUI {
             g2.setColor(Color.green);
             g2.drawString("Level Up!", 310, 320);
             if(System.currentTimeMillis() - levelUpStartTime >= 3000) {
+                Player.level++;
                 Player.exp -= Player.maxExp;
                 Player.maxExp += 250;
                 Player.shootCooldown -= 75;

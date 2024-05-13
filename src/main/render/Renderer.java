@@ -1,4 +1,4 @@
-package main;
+package main.render;
 
 import game.Game;
 import game.state.MenuState;
@@ -24,26 +24,33 @@ public class Renderer {
     }
     private void renderGameObjects(State state, Graphics graphics) {
         Camera camera = state.getCamera();
+        int cameraX = camera.getPosition().intX();
+        int cameraY = camera.getPosition().intY();
+        int halfSpriteSize = Game.SPRITE_SIZE / 2;
+
         for (GameObject gameObject : state.getGameObjects()) {
-            graphics.drawImage(
-                    gameObject.getSprite(),
-                    gameObject.getPosition().intX() - camera.getPosition().intX() - Game.SPRITE_SIZE/2,
-                    gameObject.getPosition().intY() - camera.getPosition().intY() - Game.SPRITE_SIZE/2,
-                    null
-            );
+            if (camera.isInView(gameObject)) {
+                Image sprite = gameObject.getSprite();
+                int objX = gameObject.getPosition().intX() - cameraX - halfSpriteSize;
+                int objY = gameObject.getPosition().intY() - cameraY - halfSpriteSize;
+
+                graphics.drawImage(sprite, objX, objY, null);
+            }
         }
     }
     private void renderMap(State state, Graphics graphics) {
         Tile[][] tiles = state.getGameMap().getTiles();
         Camera camera = state.getCamera();
-        for(int i=0; i<tiles.length; i++) {
-            for(int j=0; j<tiles[i].length; j++) {
-                graphics.drawImage(
-                        tiles[i][j].getSprite(),
-                        i * Game.SPRITE_SIZE - camera.getPosition().intX(),
-                        j * Game.SPRITE_SIZE - camera.getPosition().intY(),
-                        null
-                );
+        int cameraX = camera.getPosition().intX();
+        int cameraY = camera.getPosition().intY();
+
+        for (int i = 0; i < tiles.length; i++) {
+            for (int j = 0; j < tiles[i].length; j++) {
+                Image sprite = tiles[i][j].getSprite();
+                int tileX = i * Game.SPRITE_SIZE - cameraX;
+                int tileY = j * Game.SPRITE_SIZE - cameraY;
+
+                graphics.drawImage(sprite, tileX, tileY, null);
             }
         }
     }

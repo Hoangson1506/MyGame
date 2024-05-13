@@ -4,15 +4,21 @@ import game.state.State;
 import math.Position;
 import math.Size;
 
+import java.awt.*;
 import java.util.Optional;
 
 public class Camera {
     private Position position;
     private Size windowSize;
     private Optional<GameObject> objectWithFocus;
+    private Rectangle viewBounds;
     public Camera(Size windowSize) {
         this.windowSize = windowSize;
         this.position = new Position(0, 0);
+        calculateViewBounds();
+    }
+    private void calculateViewBounds() {
+        viewBounds = new Rectangle(position.intX(), position.intY(), windowSize.getWidth(), windowSize.getHeight());
     }
     public void focusOn(GameObject gameObject) {
         objectWithFocus = Optional.ofNullable(gameObject);
@@ -23,6 +29,7 @@ public class Camera {
             this.position.setX(objectPosition.getX() - windowSize.getWidth()/2);
             this.position.setY(objectPosition.getY() - windowSize.getHeight()/2);
             clampBoudaries(state);
+            calculateViewBounds();
         }
     }
 
@@ -53,5 +60,9 @@ public class Camera {
     }
     public Optional<GameObject> getObjectWithFocus() {
         return objectWithFocus;
+    }
+
+    public boolean isInView(GameObject gameObject) {
+        return viewBounds.intersects(gameObject.getCollisionBox().getBounds());
     }
 }

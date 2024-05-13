@@ -3,9 +3,9 @@ import UI.GameUI;
 import controller.KeyHandler;
 import controller.MouseInput;
 import game.state.EndState;
-import game.state.MenuState;
 import game.state.PlayState;
 import game.state.State;
+import main.render.Renderer;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,7 +13,7 @@ import java.awt.image.BufferStrategy;
 
 public class GameWindow extends JFrame {
     private Canvas canva;
-    Renderer renderer;
+    main.render.Renderer renderer;
     private GameUI gameUI;
     public GameWindow(int width, int height, KeyHandler keyHandler, MouseInput mouseInput) {
         setTitle("My Game");

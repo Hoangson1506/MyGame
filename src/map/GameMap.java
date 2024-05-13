@@ -8,7 +8,7 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class GameMap {
-    Tile[][] tiles;
+    private static Tile[][] tiles;
     public GameMap(Size size, SpriteLibrary spriteLibrary) {
         tiles = new Tile[size.getWidth()][size.getHeight()];
         initTiles(spriteLibrary);
@@ -24,10 +24,10 @@ public class GameMap {
         return tiles;
     }
 
-    public double getWidth() {
+    public static double getWidth() {
         return tiles.length * Game.SPRITE_SIZE;
     }
-    public double getHeight() {
+    public static double getHeight() {
         return tiles[0].length * Game.SPRITE_SIZE;
     }
 }

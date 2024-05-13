@@ -1,5 +1,6 @@
 package math;
 
+import map.GameMap;
 import mechanic.Movement;
 
 public class Position {
@@ -26,6 +27,13 @@ public class Position {
         Vector2D vector2D = movement.getVector2D();
         x += vector2D.getX();
         y += vector2D.getY();
+        clampBoundaries();
+    }
+    private void clampBoundaries() {
+        if(x < 0) x = 0;
+        if(y < 0) y = 0;
+        if(x > GameMap.getWidth()) x = GameMap.getWidth();
+        if(y > GameMap.getHeight()) y = GameMap.getHeight();
     }
     public void setX(double x) {
         this.x = x;

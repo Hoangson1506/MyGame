@@ -3,6 +3,7 @@ package mechanic;
 import game.state.State;
 import math.Position;
 import object.Camera;
+import object.GameObject;
 import object.MeleeEnemy;
 
 import java.util.Random;
@@ -36,8 +37,8 @@ public class Spawner {
         // Calculate spawn position
         double x = calculateSpawnX();
         double y = calculateSpawnY();
-
-        state.getGameObjects().add(new MeleeEnemy(state.getSpriteLibrary(), "meleeEnemy", new Position(x, y), camera));
+        GameObject meleeEnemy = new MeleeEnemy(state.getSpriteLibrary(), "meleeEnemy", new Position(x, y), camera);
+        state.getGameObjects().add(meleeEnemy);
     }
 
     private double calculateSpawnX() {

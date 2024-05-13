@@ -175,7 +175,7 @@ public class MeleeEnemy extends GameObject{
     public static void evolve() {
         baseValue += 5;
         baseDamage += 1;
-        baseLife += 15;
-        baseSpeed += 0.25;
+        baseLife += 10;
+        baseSpeed += 0.2;
     }
 }

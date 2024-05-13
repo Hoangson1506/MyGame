@@ -15,9 +15,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public abstract class State {
-    GameMap gameMap;
+    private GameMap gameMap;
     protected List<GameObject> gameObjects;
-    private List<GameObject> gameObjectsToRemove;
     protected KeyHandler keyHandler;
     protected MouseInput mouseInput;
     public static SpriteLibrary spriteLibrary;
@@ -29,7 +28,6 @@ public abstract class State {
         this.mouseInput = mouseInput;
         spriteLibrary = new SpriteLibrary();
         gameObjects = new ArrayList<>();
-        gameObjectsToRemove = new ArrayList<>();
         gameMap = new GameMap(new Size(30, 30), spriteLibrary);
         camera = new Camera(windowSize);
         spawner = new Spawner(this);
@@ -38,8 +36,6 @@ public abstract class State {
     public void update() {
         spawner.update(this);
         new ArrayList<>(gameObjects).forEach(gameObject -> gameObject.update(this));
-        gameObjects.removeAll(gameObjectsToRemove);
-        gameObjectsToRemove.clear();
     }
     public List<GameObject> getGameObjects() {
         return gameObjects;
