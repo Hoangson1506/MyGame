@@ -1,4 +1,5 @@
 package object;
+import UI.GameUI;
 import animation.SpriteLibrary;
 import controller.KeyHandler;
 import controller.MouseInput;
@@ -24,12 +25,13 @@ public class Player extends GameObject {
     public static double speed;
     private static int maxLife;
     public static int life;
-    public static long exp, maxExp;
+    public static long exp, maxExp, level;
     private int arrowSpeed;
     private long lastShootTime;
     public static long shootCooldown;
     private TakeHit takeHit;
     public static boolean isHurt;
+    public static boolean hurtSoundPlayed;
     public Player(SpriteLibrary spriteLibrary, KeyHandler keyHandler, MouseInput mouseInput) {
         super(spriteLibrary, "player");
         size = new Size(Game.SPRITE_SIZE , Game.SPRITE_SIZE );
@@ -48,11 +50,20 @@ public class Player extends GameObject {
         exp = 0;
         takeHit = new TakeHit(this, "PlayerHurt");
         isHurt = false;
+        hurtSoundPlayed = false;
+        level = 1;
     }
     @Override
     public void update(State state) {
         handleCollisions(state);
+        if(GameUI.timesInSeconds >= GameUI.victoryTime) {
+            Game.endGame();
+        }
         if(isHurt) {
+            if(!hurtSoundPlayed) {
+                state.playSE("PlayerHurt");
+                hurtSoundPlayed = true;
+            }
             isHurt = takeHit.playerUpdate(isHurt);
             movement.update(keyHandler);
             position.apply(movement);

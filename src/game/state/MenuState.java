@@ -36,6 +36,7 @@ public class MenuState extends State{
         font = new Font("Karmatic Arcade", Font.PLAIN, 36);
         command = 0;
         canChangeCommand = true;
+        playMusic("MenuTheme");
     }
 
     public void renderMenu(Graphics graphics) {

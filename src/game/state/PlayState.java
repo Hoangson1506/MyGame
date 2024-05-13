@@ -13,6 +13,7 @@ public class PlayState extends State{
         gameObjects.add(player);
         camera.focusOn(player);
         spawner.start();
+        playMusic("GameTheme");
     }
     @Override
     public void update() {

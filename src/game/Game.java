@@ -34,10 +34,12 @@ public class Game {
         gameWindow.render(state);
     }
     public static void endGame() {
+        state.stopMusic();
         state = new EndState(new Size(width, height), keyHandler, mouseInput);
-        gameWindow.reset();
     }
     public static void startGame() {
+        state.stopMusic();
         state = new PlayState(new Size(width, height), keyHandler, mouseInput);
+        gameWindow.reset();
     }
 }

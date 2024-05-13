@@ -1,4 +1,6 @@
 package UI;
+import game.Game;
+import mechanic.Spawner;
 import object.MeleeEnemy;
 import object.Player;
 import object.projectile.Arrow;
@@ -13,7 +15,7 @@ public class GameUI {
     private long startTimeMillis;
     private long levelUpStartTime, warningStartTime;
     private boolean enemyEvolved;
-    public int timesInSeconds;
+    public static int timesInSeconds, victoryTime;
     public static long score;
     private boolean timeStopped;
     public GameUI() {
@@ -30,6 +32,7 @@ public class GameUI {
         warningStartTime = -1;
         enemyEvolved = false;
         timeStopped = false;
+        victoryTime = 300;
     }
     public void render(Graphics g2) {
         if(!timeStopped) {
@@ -43,6 +46,7 @@ public class GameUI {
             g2.setColor(Color.red);
         g2.drawImage(lifeImage, 10, 10, null);
         g2.drawString(" X " + String.valueOf(Player.life), 35, 35);
+        g2.drawString("LV." + String.valueOf(Player.level), 25, 70);
         g2.setColor(Color.black);
         g2.drawString(time, 340, 35);
         g2.drawString(points, 675, 35);
@@ -52,6 +56,11 @@ public class GameUI {
             g2.setFont(g2.getFont().deriveFont(50F));
             g2.setColor(Color.red);
             g2.drawString("Game Over!", 210, 330);
+        }
+        if(timesInSeconds >= victoryTime) {
+            g2.setFont(g2.getFont().deriveFont(50F));
+            g2.setColor(Color.yellow);
+            g2.drawString("Victory!", 235, 330);
         }
     }
     private void updateTime() {
@@ -75,7 +84,7 @@ public class GameUI {
         return stringBuilder.toString();
     }
     private void evolvedEnemy(Graphics g2) {
-        if(timesInSeconds % 45 == 0 && timesInSeconds != 0) {
+        if(timesInSeconds % 50 == 0 && timesInSeconds != 0) {
             enemyEvolved = true;
         }
         if(enemyEvolved) {
@@ -89,6 +98,7 @@ public class GameUI {
 
             if(elapsedTime >= 1500) {
                 MeleeEnemy.evolve();
+                Spawner.spawnInterval -= 100;
                 enemyEvolved = false;
                 warningStartTime = -1;
             }
@@ -104,10 +114,10 @@ public class GameUI {
             if(System.currentTimeMillis() - levelUpStartTime >= 3000) {
                 Player.exp -= Player.maxExp;
                 Player.maxExp += 250;
-                Player.shootCooldown -= 50;
+                Player.shootCooldown -= 75;
                 Player.speed += 0.15;
                 Player.life = 100;
-                Arrow.damage += 2;
+                Arrow.damage += 5;
                 levelUpStartTime = -1;
             }
         }

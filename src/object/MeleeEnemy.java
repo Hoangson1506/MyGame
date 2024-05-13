@@ -40,6 +40,7 @@ public class MeleeEnemy extends GameObject{
     private int attackDuration;
     private int deathDuration;
     private int hurtDuration;
+    private boolean hurtSoundPlayed;
     public MeleeEnemy(SpriteLibrary spriteLibrary, String name, Position position, Camera camera) {
         super(spriteLibrary, name);
         this.position = position;
@@ -61,6 +62,7 @@ public class MeleeEnemy extends GameObject{
         attackDuration = 40;
         deathDuration = 40;
         hurtDuration = 0;
+        hurtSoundPlayed = false;
     }
     @Override
     public void update(State state) {
@@ -75,6 +77,10 @@ public class MeleeEnemy extends GameObject{
             }
         }
         else if(isHurt) {
+            if(!hurtSoundPlayed) {
+                state.playSE("EnemyHurt");
+                hurtSoundPlayed = true;
+            }
             isHurt = takeHit.enemyUpdate(isHurt);
             hurtDuration--;
         }
@@ -128,6 +134,7 @@ public class MeleeEnemy extends GameObject{
         if(other instanceof Player) {
             isAttacking = true;
             if(attackDuration == 0 || attackDuration == 40) {
+                Player.hurtSoundPlayed = false;
                 Player.life -= damage;
                 Player.isHurt = true;
                 attackDuration = 40;
@@ -139,6 +146,7 @@ public class MeleeEnemy extends GameObject{
         if(other instanceof Arrow) {
             isHurt = true;
             if(hurtDuration == 0) {
+                hurtSoundPlayed = false;
                 life -= Arrow.damage;
                 hurtDuration = 40;
             }
